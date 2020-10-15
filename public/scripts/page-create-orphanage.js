@@ -47,46 +47,51 @@ function addPhotoField() {
   ].cloneNode(true);
 
   // verificar se está vazio
-  const input = newFieldContainer.children[0];
+  const input = newFieldContainer.children[0]
 
-  if (input.value == "") {
-    return;
+  if(input.value == ""){
+    return
   }
 
   // limpar campo antes de adicionar ao container de imagens
-  newFieldContainer.children[0].value = "";
+  newFieldContainer.children[0].value = ""
 
   // adicionar o clone ao container de imagens
-  container.appendChild(newFieldContainer);
+  container.appendChild(newFieldContainer)
+
 }
 
-function deleteField(event) {
-  const span = event.currentTarget;
+function deleteField(event){
+ const span = event.currentTarget;
 
-  const fieldsContainer = document.querySelectorAll(".new-upload");
+ const fieldsContainer = document.querySelectorAll(".new-upload");
 
-  if (fieldsContainer.length <= 1) {
-    span.parentNode.children[0].value = "";
+ if(fieldsContainer.length <= 1){
+  span.parentNode.children[0].value = ""
 
-    return;
-  }
+  return
 
-  // deletar campo
-  span.parentNode.remove();
+ }
+
+ // deletar campo
+ span.parentNode.remove();
 }
 
-function toggleSelect(event) {
-  //atualizar input hidden com o valor selecionado
-  const input = document.querySelector('[name="open_on_weekends"]');
-
-  input.value = button.dataset.value;
+function toggleSelect(event){
 
   // remover classe active
-  document.querySelectorAll(".button-select button").forEach(function (button) {
-    button.classList.remove("active");
-  });
+  document.querySelectorAll('.button-select button')
+  .forEach( function(button){
+    button.classList.remove('active')
+  })
 
   //colocar a classe active
-  const button = event.currentTarget;
-  button.classList.add("active");
+  const button = event.currentTarget
+  button.classList.add('active')
+
+  //atualizar input hidden com o valor selecionado
+  const input = document.querySelector('[name="open_on_weekends"]')
+
+  input.value = button.dataset.value
+  
 }
