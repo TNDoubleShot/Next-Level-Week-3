@@ -95,3 +95,12 @@ function toggleSelect(event){
   input.value = button.dataset.value
   
 }
+
+function validate(event){
+  // validar se foi selecionado ponto no mapa
+
+
+
+  event.preventDefault()
+  alert('Selecione um ponto no mapa')
+}
